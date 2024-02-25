@@ -1,0 +1,28 @@
+<a href="/home">Ver productos</a>
+<h1>Ver Lista de Productos Tiempo Real</h1>
+<ul id="realTimeProducts" class="realTimeProducts">
+    {{#each products}}
+        <div id="productsFromServer"></div>
+    {{/each}}
+</ul>
+
+<form id="addProductForm">
+    <input type="text" id="title" placeholder="Title" required>
+    <input type="text"  id="description" placeholder="Description" required>
+    <input type="number" id="price" placeholder="price" required>
+    <input type="text" id="category" placeholder="category" required>
+    <input type="text" id="code" placeholder="Code" required>
+    <input type="number" id="stock" placeholder="Stock" required>
+    <button type="submit" id="addProduct">Create Product</button>
+  </form>
+  <form id="deleteProductForm">
+    <p>Producto a eliminar</p>
+    <div >
+        <label for="prodId">ID del producto:</label>
+        <input type="number" id="prodId"/>
+    </div>
+    <button type="submit" id="deleteProduct">Eliminar</button>
+</form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js" integrity="sha512-rwu37NnL8piEGiFhe2c5j4GahN+gFsIn9k/0hkRY44iz0pc81tBNaUN56qF8X4fy+5pgAAgYi2C9FXdetne5sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
